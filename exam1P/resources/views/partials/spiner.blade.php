@@ -1,5 +1,3 @@
-
-
-<div class="spinner-border text-light" role="status">
+<div class="spinner-border" role="status">
     <span class="visually-hidden">Loading...</span>
 </div>
