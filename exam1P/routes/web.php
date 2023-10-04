@@ -13,10 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::view('/', 'inicio') -> name('vista1');
+Route::view('/vis1', 'vista1') -> name('vista1');
+Route::view('/vis2', 'vista2') -> name('vista2');
+Route::view('/vis3', 'vista3') -> name('vista3');
