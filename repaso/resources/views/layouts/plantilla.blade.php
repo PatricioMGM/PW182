@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,11 @@
     @vite(['resources/js/app.js'])
     <link rel="stylesheet" href="/css/app.css">
     <title>@yield('titulo')</title>
-    <script src="sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
+    @if (session()->has('confirmacion'))
     <script>
         Swal.fire({
             icon: 'success',
@@ -18,6 +19,7 @@
             text: 'Libro guardado'
         });
     </script>
+    @endif
     
     <header>
         @include('partials.navBar')

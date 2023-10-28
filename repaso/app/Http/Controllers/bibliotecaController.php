@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\validarLibro;
+use Illuminate\Http\Request;
+use Alert;
 
 
 class bibliotecaController extends Controller
@@ -17,13 +17,10 @@ class bibliotecaController extends Controller
         return view('formulario');
     }
 
-    public function mRegistrar(Request $req) {
-        $validated = $req->validate([
-            'ISBN' => 'required|numeric|min:13',
-            'paginas' => 'required|numeric',
-            'email_editorial' => 'required|email',
-        ]);
+    public function mRegistrar(validarLibro $req) {
+
     
+        Alert::success('Registo', 'Tu registro ha sido exitoso')->persistent(true);
         return redirect('/formulario')->with('confirmacion', 'Tu recuerdo llego al controlador');
     }
     

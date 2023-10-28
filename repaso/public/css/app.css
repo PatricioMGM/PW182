@@ -68,8 +68,9 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .boton-registrar{
     width: 100%;
+    text-align: center;
 }
 
 .errores{
-    color: red;
+    color: red !important;
 }
