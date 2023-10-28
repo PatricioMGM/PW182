@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\bibliotecaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +24,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); */
 
 
-Route::get('/', [])
+Route::get('/', [bibliotecaController::class, 'mInicio'])->name('apodoInicio');
+Route::get('/formulario', [bibliotecaController::class, 'mFormulario'])->name('apodoFormulario');
+Route::post('/RegistrarLibro', [bibliotecaController::class, 'mRegistrar'])->name('registrar');
