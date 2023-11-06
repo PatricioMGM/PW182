@@ -20,8 +20,12 @@ class bibliotecaController extends Controller
     public function mRegistrar(validarLibro $req) {
 
     
-        Alert::success('Registo', 'Tu registro ha sido exitoso')->persistent(true);
-        return redirect('/formulario')->with('confirmacion', 'Tu recuerdo llego al controlador');
+        /* Alert::success('Registo', 'Tu registro ha sido exitoso')->persistent(true); */
+        /* return redirect('/formulario')->with('confirmacion', 'Tu recuerdo llego al controlador'); */
+        $titulo = $req->input('txtTitulo');
+        $mensaje = "Libro '$titulo' registrado correctamente";
+        return redirect('/formulario')->with('confirmacion', ['titulo' => 'Todo correcto', 'dato' => $mensaje]);
+
     }
     
 

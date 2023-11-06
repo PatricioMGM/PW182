@@ -11,6 +11,8 @@
         <form method="POST" action="/RegistrarLibro">
             @csrf <!-- token de seguridad-->
 
+            <h2 class="titulo-registro" >Registrar Libro</h2>
+
             <div class="mb-3">
                 <label for="ISBN" class="form-label">ISBN</label>
                 <input type="text" name="txtISBN" class="form-control" aria-describedby="emailHelp"

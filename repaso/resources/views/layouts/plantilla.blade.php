@@ -13,13 +13,16 @@
 
     @if (session()->has('confirmacion'))
     <script>
+        const confirmacion = @json(session('confirmacion'));
         Swal.fire({
             icon: 'success',
-            title: 'Todo correcto',
-            text: 'Libro guardado'
+            title: confirmacion.titulo,
+            text: confirmacion.dato
         });
     </script>
     @endif
+
+
     
     <header>
         @include('partials.navBar')
